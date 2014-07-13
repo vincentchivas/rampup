@@ -13,3 +13,9 @@ git push -u origin master
 
 //ipython manage.py shell  交互模式
 //eg: from blog.models.py import Users  user=Users()
+
+
+//python _表示保护类型 __表示私有类型
+*git push origin 本地分支:中心库分支
+
+*git pull origin 中心库分:支本地分支
