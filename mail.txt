@@ -1,0 +1,41 @@
+占用内存最高的前五个进程
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+huangbin  3370  3.8 13.4 992444 274848 ?       Sl   10:29  12:40 /usr/lib/firefox/firefox -new-window
+root      1039  3.9 12.1 403700 248276 tty7    Ssl+ 09:57  14:15 /usr/bin/X :0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch -background none
+huangbin  3627  0.1  2.9 1380376 59416 ?       Sl   10:51   0:29 /usr/lib/libreoffice/program/soffice.bin --writer --splash-pipe=6
+baina     1517  0.0  2.8 206552 58204 ?        S    09:57   0:16 uwsgi --pidfile=/var/run/dolphinopadmin-service-uwsgi.pid -x uwsgi.xml --uid baina
+baina     1501  0.1  2.7 203352 55588 ?        S    09:57   0:32 uwsgi --pidfile=/var/run/dolphinopadmin-service-uwsgi.pid -x uwsgi.xml --uid baina
+ 
+当前正在被占用的网络端口，端口号以及进程ID
+激活Internet连接 (服务器和已建立连接的)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:9101            0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:9102            0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:25              0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:8003          0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:8004          0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:18085         0.0.0.0:*               LISTEN      -               
+tcp        1      0 192.168.10.130:54277    91.189.89.144:80        CLOSE_WAIT  2247/ubuntu-geoip-p
+tcp        0      0 192.168.10.130:47482    115.29.171.191:27017    ESTABLISHED -               
+tcp        0      0 192.168.10.130:49191    117.79.157.251:80       ESTABLISHED 3370/firefox    
+tcp        0      0 192.168.10.130:48935    117.79.157.251:80       ESTABLISHED 3370/firefox    
+tcp        0      0 192.168.10.130:49176    117.79.157.251:80       ESTABLISHED 3370/firefox    
+tcp        0      0 192.168.10.130:49450    117.79.157.251:80       ESTABLISHED 3370/firefox    
+tcp6       0      0 :::22                   :::*                    LISTEN      -               
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -               
+tcp6       0      0 :::25                   :::*                    LISTEN      -               
+udp        0      0 127.0.0.1:53            0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:54789           0.0.0.0:*                           -               
+udp6       0      0 :::33886                :::*                                -               
+udp6       0      0 :::5353                 :::*                                -               
+ 
+当前用户账户主目录文件总大小
+712K	.
