@@ -1,8 +1,12 @@
 # Django settings for testdjango project.
 SESSION_ENGINE = 'mongo_sessions.session'
-MONGODB_HOST = 'localhost'  # enter your MongoDB hostname here
-MONGODB_PORT = 27017         # enter your MongoDB port here (None for default port)
-MONGODB_NAME = 'authdb'       # enter your MongoDB database name here
+
+DB_SETTINGS={
+    'id':{'host':'localhost','port':27017, 'name':'seqs'},
+    'user':{'host':'localhost','port':27017, 'name':'users'},
+    'preset':{'host':'localhost', 'name':'preset'},
+    'trans':{'host':'localhost', 'name':'trans'}
+}
 
 
 

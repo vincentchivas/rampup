@@ -16,7 +16,7 @@ MONGO_SESSIONS_TTL = getattr(
 if not MONGO_CLIENT:
     MONGO_PORT = int(getattr(settings, 'MONGO_PORT', 27017))
     MONGO_HOST = getattr(settings, 'MONGO_HOST', 'localhost')
-    MONGO_DB_NAME = getattr(settings, 'MONGO_DB_NAME', 'savesessions')
+    MONGO_DB_NAME = getattr(settings, 'MONGO_DB_NAME', 'users')
     MONGO_DB_USER = getattr(settings, 'MONGO_DB_USER', False)
     MONGO_DB_PASSWORD = getattr(settings, 'MONGO_DB_PASSWORD', False)
 
