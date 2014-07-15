@@ -17,8 +17,10 @@ urlpatterns = patterns('',
     url(r'^blog/index/$','blog.views.index'),
     url(r'^site_static/(?P<path>.*)','django.views.static.serve',{'document_root':settings.STATIC_PATH}),
     url(r'^blog/login/$','blog.views.login'),
+    url(r'^blog/logout/$','blog.views.logout'),
     url(r'^blog/regist/$','blog.views.regist'),
     url(r'^blog/showreg/$','blog.views.showreg'),
     url(r'^blog/download/(?P<path>.*)','django.views.static.serve',{'document_root':'./static/blog/downfiles/','show_indexes':True}),
     #url(r'^cms/index/$','cms.views.index'),
+    url(r'^blog/user/(?P<userid>\d{0,1})')
     )

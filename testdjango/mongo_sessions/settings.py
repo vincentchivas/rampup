@@ -1,6 +1,4 @@
 from django.conf import settings
-from django.core.exceptions import ImproperlyConfigured
-
 
 MONGO_CLIENT = getattr(settings, 'MONGO_CLIENT', False)
 

@@ -6,8 +6,8 @@ from django.utils.encoding import force_unicode
 from django.utils import simplejson
 from django.http import HttpResponse
 from decimal import Decimal
-from provisionadmin.settings import DEBUG
-from provisionadmin.utils.respcode import OK
+from testdjango.settings import DEBUG
+from utils.respcode import OK
 
 
 def json_encode(data):
@@ -28,7 +28,8 @@ def json_encode(data):
             ret = _list(data)
         elif isinstance(data, models.Model):
             ret = _model(data)
-        # here we need to encode the string as unicode (otherwise we get utf-16 in the json-response)
+        # here we need to encode the string as unicode (otherwise we get utf-16
+        # in the json-response)
         elif isinstance(data, str):
             ret = unicode(data, 'utf-8')
         # see http://code.djangoproject.com/ticket/5868
@@ -59,23 +60,21 @@ def json_encode(data):
 
     ret = _any(data)
 
-    return simplejson.dumps(ret, cls = DateTimeAwareJSONEncoder, ensure_ascii = False, indent = 4 if DEBUG else 0)
+    return simplejson.dumps(ret, cls=DateTimeAwareJSONEncoder, ensure_ascii=False, indent=4 if DEBUG else 0)
 
 
-def _json_response(status, data):
-    d = {'status':status, 'data':data}
-    return HttpResponse(json_encode(d), content_type = 'application/json; charset=utf-8')
+def _json_response(status, data, msg=None):
+    d = {'status': status, 'data': data, 'msg': msg}
+    return HttpResponse(json_encode(d), content_type='application/json; charset=utf-8')
 
 
-def json_response_ok(data = None):
-    return _json_response(OK, data)
+def json_response_ok(data=None, msg=None):
+    return _json_response(OK, data, msg)
 
 
-def json_response_error(error_code, msg = None):
-    return _json_response(error_code, msg)
+def json_response_error(error_code, data={}, msg=None):
+    return _json_response(error_code, data,msg)
 
 
 def json_request(request):
     return simplejson.loads(request.raw_post_data)
-
-
