@@ -22,5 +22,6 @@ urlpatterns = patterns('',
     url(r'^blog/showreg/$','blog.views.showreg'),
     url(r'^blog/download/(?P<path>.*)','django.views.static.serve',{'document_root':'./static/blog/downfiles/','show_indexes':True}),
     #url(r'^cms/index/$','cms.views.index'),
-    url(r'^blog/user/(?P<userid>\d{0,1})')
+    #url(r'^blog/user/(?P<userid>\d{0,1})','user_detail_modify'),
+    url(r'^blog/user/$','blog.views.user_list')
     )

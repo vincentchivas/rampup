@@ -41,15 +41,33 @@ class User(ModelBase):
 
 
 class Group(ModelBase):
-    pass
+    @classmethod
+    def new(cls,group_name,permission_list=[]):
+        """
+        creat group
+        """
+        instance=cls()
+        instance.group_name=group_name
+        instance.permission_list=permission_list
 
 
 class Permission(ModelBase):
-    pass
+    @classmethod
+    def new(cls,perm_name,perm_profile='',container='',app_label='',model_label='',operator=''):
+        instance = cls()
+        instance.perm_name=perm_name
+        instance.perm_profile=perm_profile
+        instance.container=container
+        instance.app_label=app_label
+        instance.model_label=model_label
+        instance.operator=operator
+
+  
 
 
-class Session(ModelBase):
-    pass
+
+
+
 
 
 
