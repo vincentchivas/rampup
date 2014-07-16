@@ -23,7 +23,9 @@ def check_session(func):
             if item:
                 uid = req.session.get('uid')
                 if uid:
-                    check = True
+                    u = user.find_one_user({'_id':uid})
+                    if u.is_active:   #可以加上鉴权
+                        check = True
         if check:
             return func(req, *args, **kv)
         else:

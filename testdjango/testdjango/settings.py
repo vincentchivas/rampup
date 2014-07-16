@@ -1,6 +1,14 @@
 # Django settings for testdjango project.
 SESSION_ENGINE = 'utils.session'
 
+CONTAINERS={
+    'usermanage': ('userauth', 'I18N')
+    }
+APPS={
+    'userauth': ('user', 'group', 'permission',), 
+    'I18N': ('trans',)
+    }
+
 DB_SETTINGS = {
     'id': {'host': 'localhost', 'port': 27017, 'name': 'seqs'},
     'user': {'host': 'localhost', 'port': 27017, 'name': 'users'},

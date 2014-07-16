@@ -20,9 +20,14 @@ def login(req):
     name = req.POST.get('username')
     password = req.POST.get('userpwd')
     u = user.find_one_user({'user_name': name, 'password': password})
-    if u:
+    if u.is_active:
         req.session["uid"] = u['_id']
-        # get left navigation data
+        if u.is_superuser:
+            permissions=user.find_permissions()
+            #get all permissions
+            # get left navigation data
+        else:
+                
         return json.json_response_ok(name, 'ok')
     else:
         return json.json_response_error(1, {}, 'authetic error')
